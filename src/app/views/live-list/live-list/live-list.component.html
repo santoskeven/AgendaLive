@@ -1,0 +1,93 @@
+<div class="container">
+
+    <nav>
+
+        <ul class="navigate">
+    
+            <li class="atv">
+                PRÓXIMA
+            </li>
+    
+            
+            <li class="atv">
+               REALIZADAS
+            </li>
+    
+            <div class="line_bottom"></div><!--line_bottom-->
+    
+    
+        </ul>
+    
+    </nav>
+    
+    <!-- PRÓXIMAS -->
+    <div class="content_one content">
+
+       <div style="width: 97%; background-color: red;" >
+        <ng-container *ngFor="let live of livesNext">
+              
+            <div class="card_content">
+
+                <div class='cont_header'>
+
+                    <div class="top_h">
+                        <p>{{live.liveName}}</p>
+                        <p style="padding: .1rem 1rem; background-color: gray">{{live.liveDate | localDataPipe}}</p>
+                    </div>
+
+                    <span style="display: flex; align-items: left; padding-top: .4rem;" >{{live.channelName}}</span>
+
+                </div><!--cont_header-->
+               
+                   <!--  -->
+               
+                <div class="cont_text">
+                  <!-- <iframe width="100%" height="200px" [src]="live.urlSafe" frameborder="0" allow="accelerometer; autoplay encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+                  <iframe width="100%" height="215" [src]="live.urlSafe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div><!--cont_text-->
+
+           </div><!--card_single-->
+
+        </ng-container><!--card_content-->
+       </div>
+
+    
+    </div><!--content_one-->
+
+    
+                <!--  -->
+
+
+    <!-- REALIZADAS -->
+    <div class="content_two content">
+    
+        <div style="width: 97%; background-color: red;" >
+            <ng-container *ngFor="let live of livesPrevious">
+                  
+                <div class="card_content">
+    
+                    <div class='cont_header'>
+    
+                        <div class="top_h">
+                            <p>{{live.liveName}}</p>
+                            <p style="padding: .1rem 1rem; background-color: gray">{{live.liveDate | localDataPipe}}</p>
+                        </div>
+    
+                        <span style="display: flex; align-items: left; padding-top: .4rem;" >{{live.channelName}}</span>
+    
+                    </div><!--cont_header-->
+                   
+                       <!--  -->
+                   
+                    <div class="cont_text">
+                        <iframe width="100%" height="215" [src]="live.urlSafe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div><!--cont_text-->
+    
+               </div><!--card_single-->
+    
+            </ng-container><!--card_content-->
+           </div>
+
+    </div><!--content_one-->
+
+</div><!--container-->

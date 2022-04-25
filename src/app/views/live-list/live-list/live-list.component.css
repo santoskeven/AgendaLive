@@ -1,0 +1,95 @@
+.container{
+    width: 100%;
+    position: relative;
+    /* background-color: blue; */
+    height: 100vh;
+ 
+}
+
+.navigate{
+    display: flex;
+    position: relative;
+    padding: 23px 0 1.5rem 0;
+}
+
+.navigate li{
+    margin-right: 3%;
+    padding: 1rem 1.5rem;
+    list-style-type: none;
+    /* background-color: red; */
+}
+
+.line_bottom{
+    transition: 1s;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 40px;
+    /* background-color: blue;   */
+}
+
+.content_one{
+    /* background-color: red; */
+    will-change: transform;
+    transform:translateX(0%)
+}
+
+.card_content{
+    display: inline-block;
+    width: calc(97% / 3);
+    margin: .5rem .5%;
+    text-align: center;
+    background-color: rgb(153, 0, 255);
+    box-shadow: 2px 4px 5px 1px;
+    position: relative;
+}
+
+.cont_header{
+    padding: .5rem 2% 0 2%;
+}
+
+.top_h{
+    display: flex;
+    justify-content: space-between;
+}
+
+.cont_text{
+    position: relative;
+    bottom: 0;
+    padding: .8rem 0 0 0;
+}
+
+.content_two{
+    /* background-color: rgb(76, 0, 255); */
+    will-change: transform;
+    transform:translateX(110%);
+    /* left: 110%; */
+    /* opacity: 0;
+    visibility: hidden; */
+} 
+
+.content{
+    will-change: transform;
+    transition: .7s;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    /* background-color: yellow; */
+}
+
+
+@media screen and (max-width: 768px){
+    .card_content{
+        width: 31.3%;
+        margin: .5rem 1%;
+    }
+}
+
+@media screen and (max-width: 568px){
+    .card_content{
+        width: 98%;
+    }
+}
