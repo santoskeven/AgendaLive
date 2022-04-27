@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './views/home.component';
 import { LiveListComponent } from './views/live-list/live-list/live-list.component';
-import { LiveRegisterComponent } from './views/live-register/live-register/live-register.component';
+import { LiveRegisterComponent } from './views/live-register/live-register.component';
 
 const routes: Routes = [
 

@@ -31,8 +31,6 @@ export class LiveRegisterComponent implements OnInit {
 
     });
 
-    console.log(this.liveForm)
-
   }
 
 
@@ -42,17 +40,12 @@ export class LiveRegisterComponent implements OnInit {
       this.liveForm.value.liveDate = newDate.format('YYYY-MM-DD') + 'T' + this.liveForm.value.liveTime;
 
       this.rest.postLives(this.liveForm.value).subscribe( result => {})
-      console.log(this.rest)
-      
+
+      window.location.reload()  
   } 
 
-
-  cloneForm(){
-
-  };
-
   resetForm(){
-    
+    this.liveForm.reset()
   };
 
 
