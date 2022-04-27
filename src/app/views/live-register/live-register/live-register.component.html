@@ -1,0 +1,33 @@
+<section class="cont_dialog">
+       
+    <div class="box-dialog">
+
+        <h2 style="padding: .8rem 0 1.2rem .4em; font-weight: normal;">Nova Live</h2>
+
+        <form style=" display: flex;
+        justify-content: space-between;
+        flex-direction: column;"
+        [formGroup]="liveForm">
+
+            <input class="w100" type="text" placeholder="Nome da live" formControlName="liveName">
+
+            <input class="w100"  type="text" placeholder="Nome do canal" formControlName="channelName">
+
+            <input class="w100"  type="text" placeholder="Link completo" formControlName="liveLink">
+
+            <div style="width: 100%; display: flex; justify-content: space-between;">  
+                <input class="w50"  type="date" placeholder="Data da live" formControlName="liveDate">
+
+                <input class="w50"  type="time" placeholder="Hora da live" formControlName="liveTime">
+            </div>
+
+        </form>
+
+        <div class="btns">
+           <button>Cancelar</button>
+           <button style=" margin-left: .5rem;" (click)="createLive()">Adicionar</button>
+        </div><!--btn s-->
+
+    </div><!--box-dialog-->
+
+</section>

@@ -3,7 +3,6 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { Live } from 'src/app/shared/model/live.model';
 import { LiveService } from 'src/app/shared/service/live.service';
 
-
 @Component({
   selector: 'app-live-list',
   templateUrl: './live-list.component.html',
@@ -13,7 +12,6 @@ export class LiveListComponent implements OnInit {
 
   livesPrevious!: Live[];
   livesNext!: Live[];
-
 
   constructor(
     public liveService: LiveService,
@@ -54,6 +52,10 @@ export class LiveListComponent implements OnInit {
     })
 
   }
+
+
+  //  
+  
 
   getLives(){
 
