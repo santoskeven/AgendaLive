@@ -79,4 +79,18 @@ export class LiveListComponent implements OnInit {
 
   }
 
+ 
+  setpx(){
+    const line = document.getElementsByClassName('line_bottom') as HTMLCollectionOf<HTMLElement>
+    line[0].style.transform = 'translateX(0px)'
+    console.log( line[0].style.transform )
+  }
+
+  setrd(){
+    const line = document.getElementsByClassName('line_bottom') as HTMLCollectionOf<HTMLElement>
+    line[0].style.transform = 'translateX(150px)'
+    console.log( line[0].style.transform )
+  }
+
+
 }

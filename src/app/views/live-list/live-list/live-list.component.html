@@ -4,12 +4,12 @@
 
         <ul class="navigate">
     
-            <li class="atv">
+            <li class="atv" (click)="setpx()">
                 PRÓXIMA
             </li>
     
             
-            <li class="atv">
+            <li class="atv" (click)="setrd()">
                REALIZADAS
             </li>
     
@@ -23,7 +23,7 @@
       <!-- PRÓXIMAS -->
       <div class="content_one content">
 
-        <div style="width: 97%;" >
+        <div style="width: 94%; " >
          <ng-container *ngFor="let live of livesNext">
                
              <div class="card_content">
@@ -35,7 +35,7 @@
                          <p style="padding: .1rem 1rem; background-color: #9ba3cb;">{{live.liveDate | localDataPipe}}</p>
                      </div>
  
-                     <span style="display: flex; align-items: left; padding-top: .4rem;" >{{live.channelName}}</span>
+                     <span style="display: flex; padding: .7rem 0 .4rem 0;" >{{live.channelName}}</span>
  
                  </div><!--cont_header-->
                 
@@ -73,7 +73,7 @@
                              <p style="padding: .1rem 1rem; background-color: #9ba3cb">{{live.liveDate | localDataPipe}}</p>
                          </div>
      
-                         <span style="display: flex; align-items: left; padding-top: .4rem;" >{{live.channelName}}</span>
+                         <span style="display: flex; padding: .7rem 0 .4rem 0;" >{{live.channelName}}</span>
      
                      </div><!--cont_header-->
                     

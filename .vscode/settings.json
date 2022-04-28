@@ -3,6 +3,8 @@
         "DDTHH",
         "devkit",
         "fortawesome",
-        "pageable"
+        "pageable",
+        "setpx",
+        "setrd"
     ]
 }

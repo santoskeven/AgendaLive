@@ -21,12 +21,14 @@
                 <input class="w50"  type="time" placeholder="Hora da live" formControlName="liveTime">
             </div>
 
+            <div class="btns">
+                <button (click)="resetForm()">Cancelar</button>
+                <button style=" margin-left: .5rem;" (click)="createLive()">Adicionar</button>
+             </div><!--btn s-->
+
         </form>
 
-        <div class="btns">
-           <button (click)="resetForm()">Cancelar</button>
-           <button style=" margin-left: .5rem;" (click)="createLive()">Adicionar</button>
-        </div><!--btn s-->
+       
 
     </div><!--box-dialog-->
 
