@@ -13,7 +13,6 @@
  }
 
  .logo{
-   /* font-family: 'Source Sans Pro', sans-serif; */
    font-weight: bold;
    font-size: 1.3rem;
    font-family: 'Tajawal', sans-serif;
@@ -31,8 +30,12 @@
     cursor: pointer;
     font-family: 'Roboto', sans-serif;
     letter-spacing: 2px;
+    transition: .5s;
  }
- 
+ .add_live:hover{
+   background-color: #3f51b575;
+ }
+
  .add_live img{
     width: 1.3rem;
     height: 1rem;
