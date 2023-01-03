@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
+import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
 import { Live } from 'src/app/shared/model/live.model';
 import { LiveService } from 'src/app/shared/service/live.service';
 
@@ -20,7 +21,7 @@ export class LiveListComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.getLives()
+    this.getLives();
 
     const act_link = document.getElementsByClassName('atv') as HTMLCollectionOf<HTMLElement>
     const contents:any = document.getElementsByClassName('content') as HTMLCollectionOf<HTMLElement>
@@ -57,11 +58,13 @@ export class LiveListComponent implements OnInit {
   //  
   
 
-  getLives(){
+  getLives(){ 
+
+    console.log('teste');
 
     this.liveService.getLiveWithFlag('next').subscribe(data => {
       this.livesNext = data.content;
-  
+
         this.livesNext.forEach(live => {
           live.urlSafe = this.sanitizer.bypassSecurityTrustResourceUrl(live.liveLink);
         });
@@ -69,7 +72,9 @@ export class LiveListComponent implements OnInit {
     });
 
     this.liveService.getLiveWithFlag('previous').subscribe(data => {
-      this.livesPrevious = data.content
+      this.livesPrevious = data.content;
+
+      console.log(this.livesPrevious);
      
         this.livesPrevious.forEach(live => {
           live.urlSafe = this.sanitizer.bypassSecurityTrustResourceUrl(live.liveLink)
@@ -79,17 +84,14 @@ export class LiveListComponent implements OnInit {
 
   }
 
- 
   setpx(){
     const line = document.getElementsByClassName('line_bottom') as HTMLCollectionOf<HTMLElement>
     line[0].style.transform = 'translateX(0px)'
-    console.log( line[0].style.transform )
   }
 
   setrd(){
     const line = document.getElementsByClassName('line_bottom') as HTMLCollectionOf<HTMLElement>
     line[0].style.transform = 'translateX(150px)'
-    console.log( line[0].style.transform )
   }
 
 
