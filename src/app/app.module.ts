@@ -9,7 +9,7 @@ import { LocalDataPipePipe } from './shared/pipe/local-data-pipe.pipe';
 import { HomeComponent } from './views/home.component';
 import { LiveListComponent } from './views/live-list/live-list/live-list.component';
 import { LiveRegisterComponent } from './views/live-register/live-register.component';
-import { TesteComponent } from './teste/teste.component';
+// import { TesteComponent } from './teste/teste.component';
 
 
 @NgModule({
@@ -19,7 +19,7 @@ import { TesteComponent } from './teste/teste.component';
     LiveListComponent,
     LiveRegisterComponent,
     HomeComponent,
-    TesteComponent
+    // TesteComponent
   ],
   imports: [
     BrowserModule,

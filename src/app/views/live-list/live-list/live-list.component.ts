@@ -25,17 +25,32 @@ export class LiveListComponent implements OnInit {
 
     const act_link = document.getElementsByClassName('atv') as HTMLCollectionOf<HTMLElement>
     const contents:any = document.getElementsByClassName('content') as HTMLCollectionOf<HTMLElement>
+    const lineBtn:any = document.getElementsByClassName('line') as HTMLCollectionOf<HTMLElement>
     
 
         act_link[0].addEventListener('click', () => {
             contents[0].style.transform = 'translateX(0%)';
-            contents[1].style.transform = 'translateX(110%)';    
+            contents[1].style.transform = 'translateX(-150%)';   
+
+            if(lineBtn[0].classList.contains('LineAtv')){
+             }else{
+              lineBtn[0].classList.add('LineAtv')
+              lineBtn[1].classList.remove('LineAtv')
+             }
+
         })
 
         act_link[1].addEventListener('click', () => {
             
             contents[1].style.transform = 'translateX(0%)';
-            contents[0].style.transform = 'translateX(-110%)';
+            contents[0].style.transform = 'translateX(-150%)';
+
+            if(lineBtn[1].classList.contains('LineAtv')){
+             }else{
+              lineBtn[1].classList.add('LineAtv')
+              lineBtn[0].classList.remove('LineAtv')
+             }
+
         })
 
         // // // // // 
@@ -52,6 +67,15 @@ export class LiveListComponent implements OnInit {
       console.log('botão de Adicionar')
     })
 
+    // const elements:any = document.querySelectorAll('.width-js p')
+    // const LIMIT = 15
+
+    // for(let p of elements){
+    //   const AboveLimit = p[0].innerText.length >  LIMIT;
+    //   const DostsOrPonts:any = AboveLimit ? "..." : '';
+    //   p[0].innerText = p[0].innerText.substring(0, LIMIT) + DostsOrPonts
+    // }
+
   }
 
 
@@ -59,8 +83,6 @@ export class LiveListComponent implements OnInit {
   
 
   getLives(){ 
-
-    console.log('teste');
 
     this.liveService.getLiveWithFlag('next').subscribe(data => {
       this.livesNext = data.content;
@@ -73,8 +95,6 @@ export class LiveListComponent implements OnInit {
 
     this.liveService.getLiveWithFlag('previous').subscribe(data => {
       this.livesPrevious = data.content;
-
-      console.log(this.livesPrevious);
      
         this.livesPrevious.forEach(live => {
           live.urlSafe = this.sanitizer.bypassSecurityTrustResourceUrl(live.liveLink)
@@ -84,15 +104,15 @@ export class LiveListComponent implements OnInit {
 
   }
 
-  setpx(){
-    const line = document.getElementsByClassName('line_bottom') as HTMLCollectionOf<HTMLElement>
-    line[0].style.transform = 'translateX(0px)'
-  }
+  // setpx(){
+  //   const lines = document.getElementsByClassName('line_bottom') as HTMLCollectionOf<HTMLElement>
+  //   lines[0].style.transform = 'translateX(0px)'
+  // }
 
-  setrd(){
-    const line = document.getElementsByClassName('line_bottom') as HTMLCollectionOf<HTMLElement>
-    line[0].style.transform = 'translateX(150px)'
-  }
+  // setrd(){
+  //   const lines = document.getElementsByClassName('line_bottom') as HTMLCollectionOf<HTMLElement>
+  //   lines[0].style.transform = 'translateX(150px)'
+  // }
 
 
 }
