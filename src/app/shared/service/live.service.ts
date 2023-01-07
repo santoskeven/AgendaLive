@@ -31,4 +31,8 @@ export class LiveService {
     return this.httpClient.post<any>(this.apiUrl, live, this.httpOption );
   }
 
+  public DeletLiveWithFlag(flag: string): Observable<ResponsePageable> {
+    return this.httpClient.get<ResponsePageable>(this.apiUrl + '?flag=' + flag);
+  }
+
 }

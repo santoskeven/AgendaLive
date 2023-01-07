@@ -35,7 +35,6 @@ export class LiveRegisterComponent implements OnInit {
 
 
   createLive(){
-     console.log(this.liveForm)
       let newDate: moment.Moment = moment.utc(this.liveForm.value.liveDate).local()
       this.liveForm.value.liveDate = newDate.format('YYYY-MM-DD') + 'T' + this.liveForm.value.liveTime;
 

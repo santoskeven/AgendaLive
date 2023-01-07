@@ -10,25 +10,21 @@
     
         <div class="addLIve">
             <span class="linhaCima"></span>
-                <button class="add_live"><img style="margin-right: 10px" src="assets/plus.svg">NOVA LIVE</button>
+                <button class="add_live"><img style="margin-right: 12px" src="assets/plus.svg">NOVA LIVE</button>
             <span class="linhaBaixo"></span>
         </div>
 
-
     <section class="sessoes">
         <ul class="navigate">
-            <li class="atv px">
+            <li class="atv px fc">
                 PRÓXIMA
                 <span class="line LineAtv"></span>
             </li>
     
-            <li style="margin-top: 40px" class="atv rea" >
+            <li style="margin-top: 40px" class="fc atv rea" >
                REALIZADAS
-               <!-- <span class="reaATV"></span> -->
                <span class="line"></span>
-            </li>
-
-            <!-- <span class="line_bottom"></span> -->
+            </li>    
         </ul> 
     </section>
     
@@ -36,28 +32,28 @@
 
     <section class="containerLives">
         <section class="lives1 content">
-        <div class="content_one">
-            <div class="row" *ngFor="let live of livesNext">
-                <div class="card_content">
-                    <div class="HeaderCard">
-                        <div class="contentHoras">
-                            <p>{{live.liveDate | localDataPipe}}</p>
-                        </div> 
-                        <div class="leftInfos">
-                            <div class="infoFlex width-js">
-                                <p>{{live.liveName}}</p>    
-                                <p>{{live.channelName}}</p>
+            <div class="content_one">
+                <div class="row" *ngFor="let live of livesNext">
+                    <div class="card_content">
+                        <div class="HeaderCard">
+                             <div class="leftInfos">
+                                <div class="infoFlex width-js">
+                                    <p>{{live.liveName}}</p>    
+                                    <span>{{live.channelName}}</span>
+                                </div>
                             </div>
+                            <div class="contentHoras">
+                                <p>{{live.liveDate | localDataPipe}}</p>
+                            </div> 
+                           
                         </div>
-                    </div>
 
-                    <div class="cont_text">
-                        <!-- <iframe width="100%" height="200px" [src]="live.urlSafe" frameborder="0" allow="accelerometer; autoplay encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
-                        <iframe width="100%" height="225" [src]="live.urlSafe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <div class="cont_text">
+                            <iframe width="100%" height="225" [src]="live.urlSafe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
         </section>
 
@@ -66,19 +62,19 @@
                 <div class="row" *ngFor="let live of livesPrevious">
                     <div class="card_content">
                         <div class="HeaderCard">
-                            <div class="contentHoras">
-                                <p>{{live.liveDate | localDataPipe}}</p>
-                            </div> 
                             <div class="leftInfos">
                                 <div class="infoFlex width-js">
                                     <p>{{live.liveName}}</p>    
-                                    <p>{{live.channelName}}</p>
+                                    <span>{{live.channelName}}</span>
                                 </div>
                             </div>
+                            <div class="contentHoras">
+                                <p>{{live.liveDate | localDataPipe}}</p>
+                            </div> 
+                            
                         </div>
         
                         <div class="cont_text">
-                            <!-- <iframe width="100%" height="200px" [src]="live.urlSafe" frameborder="0" allow="accelerometer; autoplay encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
                             <iframe width="100%" height="225" [src]="live.urlSafe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                     </div>
@@ -86,79 +82,5 @@
             </div>
         </section>
     </section>
-
-    
-
-   
-
-
-
-    <!-- PRÓXIMAS -->
-      
-    <!-- <div class="content_one content">
-
-        <div style="width: 94%; " >
-         <ng-container *ngFor="let live of livesNext">
-               
-            <div class="card_content">
- 
-                <div class='cont_header'>
- 
-                    <div class="top_h">
-                         <p>{{live.liveName}}</p>
-                         <p style="padding: .1rem 1rem; background-color: #9ba3cb;">{{live.liveDate | localDataPipe}}</p>
-                     </div>
- 
-                     <span style="display: flex; padding: .7rem 0 .4rem 0;" >{{live.channelName}}</span>
- 
-                    </div>
-                
-                
-                    <div class="cont_text">
-                    <iframe width="100%" height="200px" [src]="live.urlSafe" frameborder="0" allow="accelerometer; autoplay encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <iframe width="100%" height="215" [src]="live.urlSafe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
- 
-            </div>
- 
-         </ng-container>
-        </div>
- 
-     
-     </div>
-  -->
-     
- 
-     <!-- REALIZADAS -->
-
-     <!-- <div class="content_two content">
-
-         <div style="width: 97%;" >
-             <ng-container *ngFor="let live of livesPrevious">
-                   
-                 <div class="card_content">
-     
-                     <div class='cont_header'>
-     
-                         <div class="top_h">
-                             <p>{{live.liveName}}</p>
-                             <p style="padding: .1rem 1rem; background-color: #9ba3cb">{{live.liveDate | localDataPipe}}</p>
-                         </div>
-     
-                         <span style="display: flex; padding: .7rem 0 .4rem 0;" >{{live.channelName}}</span>
-     
-                     </div>
-                    
-                
-                     <div class="cont_text">
-                         <iframe width="100%" height="215" [src]="live.urlSafe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                     </div>
-                </div>
-     
-             </ng-container>
-            </div>
- 
-     </div> -->
-
 
 </section>

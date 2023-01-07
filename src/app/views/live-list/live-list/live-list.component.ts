@@ -26,6 +26,9 @@ export class LiveListComponent implements OnInit {
     const act_link = document.getElementsByClassName('atv') as HTMLCollectionOf<HTMLElement>
     const contents:any = document.getElementsByClassName('content') as HTMLCollectionOf<HTMLElement>
     const lineBtn:any = document.getElementsByClassName('line') as HTMLCollectionOf<HTMLElement>
+    const FontColor:any = document.getElementsByClassName('fc')as HTMLCollectionOf<HTMLElement>
+
+    // console.log(FontColor[0].childNodes[0])
     
 
         act_link[0].addEventListener('click', () => {
@@ -34,6 +37,8 @@ export class LiveListComponent implements OnInit {
 
             if(lineBtn[0].classList.contains('LineAtv')){
              }else{
+              FontColor[0].style.color = 'white';
+              FontColor[1].style.color = '#B8B8B8';
               lineBtn[0].classList.add('LineAtv')
               lineBtn[1].classList.remove('LineAtv')
              }
@@ -47,9 +52,13 @@ export class LiveListComponent implements OnInit {
 
             if(lineBtn[1].classList.contains('LineAtv')){
              }else{
+              FontColor[1].style.color = 'white';
+              FontColor[0].style.color = '#B8B8B8';
               lineBtn[1].classList.add('LineAtv')
               lineBtn[0].classList.remove('LineAtv')
              }
+ 
+
 
         })
 
@@ -67,14 +76,17 @@ export class LiveListComponent implements OnInit {
       console.log('botão de Adicionar')
     })
 
-    // const elements:any = document.querySelectorAll('.width-js p')
-    // const LIMIT = 15
+    window.addEventListener("load", (event) => {
+      let elements:any = document.querySelectorAll('.width-js p')
+      const LIMIT = 20
 
-    // for(let p of elements){
-    //   const AboveLimit = p[0].innerText.length >  LIMIT;
-    //   const DostsOrPonts:any = AboveLimit ? "..." : '';
-    //   p[0].innerText = p[0].innerText.substring(0, LIMIT) + DostsOrPonts
-    // }
+      for(let p of elements){
+        const AboveLimit = p.innerText.length > LIMIT;
+        const DostsOrPonts:any = AboveLimit ? "..." : '';
+        p.innerText = p.innerText.substring(0, LIMIT) + DostsOrPonts
+      }
+      
+    });
 
   }
 
@@ -98,6 +110,17 @@ export class LiveListComponent implements OnInit {
      
         this.livesPrevious.forEach(live => {
           live.urlSafe = this.sanitizer.bypassSecurityTrustResourceUrl(live.liveLink)
+        });
+
+    });
+
+    this.liveService.getLiveWithFlag('next').subscribe(data => {
+      this.livesNext = data.content;
+
+      console.log( this.livesNext[0].id)
+
+        this.livesNext.forEach(live => {
+          live.urlSafe = this.sanitizer.bypassSecurityTrustResourceUrl(live.liveLink);
         });
 
     });
