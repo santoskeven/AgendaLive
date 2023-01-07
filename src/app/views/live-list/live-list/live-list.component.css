@@ -386,8 +386,8 @@
     position: absolute;
     width: 20%;
     right: -2%;
+    font-family: 'Roboto-Medium';  
 }
-
 
 .linhaCima{
     display: none;
@@ -395,6 +395,7 @@
 .linhaBaixo{
     display: none;
 }
+
 
 .navigate{
     display: flex;
